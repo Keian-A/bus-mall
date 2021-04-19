@@ -6,8 +6,8 @@ The purpose of this lab is to practice local storage as well as more work with e
 
 Author: Keian Anthony
 
-Links and Resources
+Links and Resources:
+- [This](https://meyerweb.com/eric/tools/css/reset/) link used to reset.css
 
 Reflections and Comments
-
-All additions to this project will be merged to the main branch for ease
+- All additions to this project will be merged to the main branch for ease of use
