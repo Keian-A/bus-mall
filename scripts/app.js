@@ -64,7 +64,7 @@ function displayVotes() {
   results.appendChild(h3Elem);
   for (let prod of ProductPictures.allImages) {
     const liElem = document.createElement("li");
-    liElem.textContent = `${prod.name}: ${prod.clicks}`;
+    liElem.textContent = `${prod.name}: ${prod.clicks}, shown ${prod.timesShown} times`;
     results.appendChild(liElem);
   }
 }
