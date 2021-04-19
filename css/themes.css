@@ -10,6 +10,21 @@ header {
   border-bottom: solid black 1px;
 }
 
-main * {
+#aside {
   border: solid black 1px;
+}
+
+#firstSection {
+  border: solid black 1px;
+  text-align: center;
+}
+
+#secondSection {
+  border: solid black 1px;
+  text-align: center;
+}
+
+#thirdSection {
+  border: solid black 1px;
+  text-align: center;
 }
