@@ -9,6 +9,7 @@ Author: Keian Anthony
 Links and Resources:
 - [This](https://meyerweb.com/eric/tools/css/reset/) link used to reset.css
 - [This](https://fonts.google.com/specimen/Oswald?category=Sans+Serif&thickness=5) link used for font styling
+- [This](https://placeholder.com/) link used for the placeheld image in the header
 
 Reflections and Comments
 - All additions to this project will be merged to the main branch for ease of use
