@@ -1,1 +1,13 @@
-# bus-mall
+LAB - 11
+
+BusMall
+
+The purpose of this lab is to practice local storage as well as more work with event listeners and updating HTML pages with information produced from JS.
+
+Author: Keian Anthony
+
+Links and Resources
+
+Reflections and Comments
+
+All additions to this project will be merged to the main branch for ease
