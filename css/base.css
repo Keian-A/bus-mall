@@ -1,0 +1,9 @@
+body * {
+  box-sizing: border-box;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1em;
+}
+
+body {
+  width: 100%;
+}
