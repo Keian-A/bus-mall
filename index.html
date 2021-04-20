@@ -34,28 +34,38 @@
 
     <section id="allImages">
 
-      <div id="firstSection">
+      <div id="removeImages">
 
-        <img src="./images/bag.jpg" id="left-image">
-        <p id="left-p-tag">bag</p>
+        <div id="firstSection" class="shown">
 
-      </div>
+          <img src="./images/bag.jpg" id="left-image">
+          <p id="left-p-tag">bag</p>
 
-      <div id="secondSection">
+        </div>
 
-        <img src="./images/banana.jpg" id="mid-image">
-        <p id="mid-p-tag">banana</p>
+        <div id="secondSection" class="shown">
 
-      </div>
+          <img src="./images/banana.jpg" id="mid-image">
+          <p id="mid-p-tag">banana</p>
 
-      <div id="thirdSection">
+        </div>
 
-        <img src="./images/boots.jpg" id="right-image">
-        <p id="right-p-tag">boots</p>
+        <div id="thirdSection" class="shown">
+
+          <img src="./images/boots.jpg" id="right-image">
+          <p id="right-p-tag">boots</p>
+
+        </div>
 
       </div>
 
     </section>
+
+    <div id="chartDiv" class="hidden">
+
+      <canvas id="productChart" width="500" height="500" class="hidden"></canvas>
+
+    </div>
 
     <section id="pSection">
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ullamcorper ante ultrices consequat ultrices.
@@ -74,6 +84,7 @@
     <h6>Footer</h6>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.1.1/dist/chart.min.js"></script>
   <script src="scripts/app.js"></script>
 
 </body>

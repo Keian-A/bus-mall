@@ -14,10 +14,14 @@ body * {
   justify-content: left;
 }
 
-#allImages {
-  display: contents;
+#removeImages {
+  display: flex;
 }
 
 main img {
-  width: 80%;
+  width: 300px;
+}
+
+.hidden {
+  display: none;
 }
