@@ -9,7 +9,6 @@ const rightProductImg = document.getElementById("right-image");
 const leftProductPElem = document.getElementById("left-p-tag");
 const midProductPElem = document.getElementById("mid-p-tag");
 const rightProductPElem = document.getElementById("right-p-tag");
-const removeImages = document.getElementById("removeImages");
 
 // variable to set number of votes
 const voteAttempts = 25;
@@ -130,23 +129,6 @@ function renderChart() {
   h3Elem.textContent = `Here are the results from this trial:`
   instructions.appendChild(h3Elem);
 
-  // variable for chart element
-  const chartElem = document.createElement("canvas");
-  chartElem.setAttribute(`id`, `productChart`);
-  chartElem.setAttribute(`width`, `500`);
-  chartElem.setAttribute(`height`, `500`);
-  allImages.appendChild(chartElem);
-
-  const chart = document.getElementById("productChart");
-  chart.setAttribute(`class`, `shown`);
-
-  const firstSec = document.getElementById("firstSection");
-  firstSec.setAttribute(`class`, `hidden`);
-  const secondSec = document.getElementById("secondSection");
-  secondSec.setAttribute(`class`, `hidden`);
-  const thirdSec = document.getElementById("thirdSection");
-  thirdSec.setAttribute(`class`, `hidden`);
-
   // collects all names of all the photos and stores in an array for chart to display on X axis
   let labelData = [];
   for (let prod of ProductPictures.allImages) {
@@ -226,9 +208,9 @@ function renderChart() {
       }
     }
   });
-
-  removeImages.innerHTML = ` `;
-
+  allImages.innerHTML = ` `;
+  const chartDiv = document.getElementById("chartDiv");
+  chartDiv.setAttribute(`class`, `shown`)
 }
 
 new ProductPictures(`bag`, `./images/bag.jpg`);

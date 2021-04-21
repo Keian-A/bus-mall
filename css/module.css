@@ -8,20 +8,28 @@ body * {
   justify-content: left;
 }
 
-#footer {
-  display: flex;
-  align-items: center;
-  justify-content: left;
-}
-
-#removeImages {
-  display: flex;
-}
-
 main img {
   width: 300px;
 }
 
+#allImages {
+  display: contents;
+}
+
+#allImages:nth-child(1) {
+  justify-content: center;
+}
+
 .hidden {
   display: none;
+}
+
+#chartDiv {
+  width: 80%;
+}
+
+#footer {
+  display: flex;
+  align-items: center;
+  justify-content: left;
 }
