@@ -19,19 +19,42 @@ let leftProduct = null;
 let midProduct = null;
 let rightProduct = null;
 
-const ProductPictures = function (name, imagePath) {
+const ProductArray = function (name, imagePath) {
   this.name = name;
   this.imagePath = imagePath;
   this.clicks = 0;
   this.timesShown = 0;
-  ProductPictures.allImages.push(this);
+  ProductArray.allImages.push(this);
+
+  storeItems();
 }
 
 // Array for product name object list
-ProductPictures.allImages = [];
+ProductArray.allImages = [];
+
+function searchStorage() {
+  let stringifiedVotes = localStorage.getItem(`previousVotes`);
+  if (stringifiedVotes) {
+    let votesParsed = JSON.parse(stringifiedVotes);
+    ProductArray.allImages = votesParsed;
+    console.log(votesParsed);
+    renderProduct();
+  } else {
+    createProducts();
+  }
+}
+
+// Stores the object list array in storage
+function storeItems() {
+  let stringifiedVotes = JSON.stringify(ProductArray.allImages);
+  localStorage.setItem(`previousVotes`, stringifiedVotes);
+}
 
 // Function that renders new products
 function renderProduct() {
+
+  randomProduct();
+
   leftProductImg.src = leftProduct.imagePath;
   midProductImg.src = midProduct.imagePath;
   rightProductImg.src = rightProduct.imagePath;
@@ -51,26 +74,20 @@ function randomProduct() {
   productOrder.push(leftProduct);
   productOrder.push(midProduct);
   productOrder.push(rightProduct);
-
   while (productOrder.includes(leftProduct)) {
-    let leftProdIndex = Math.floor(Math.random() * ProductPictures.allImages.length);
-    leftProduct = ProductPictures.allImages[leftProdIndex];
+    let leftProdIndex = Math.floor(Math.random() * ProductArray.allImages.length);
+    leftProduct = ProductArray.allImages[leftProdIndex];
   }
-
   productOrder.push(leftProduct);
-
   while (productOrder.includes(midProduct)) {
-    let midProdIndex = Math.floor(Math.random() * ProductPictures.allImages.length);
-    midProduct = ProductPictures.allImages[midProdIndex];
+    let midProdIndex = Math.floor(Math.random() * ProductArray.allImages.length);
+    midProduct = ProductArray.allImages[midProdIndex];
   }
-
   productOrder.push(midProduct);
-
   while (productOrder.includes(rightProduct)) {
-    let rightProdIndex = Math.floor(Math.random() * ProductPictures.allImages.length);
-    rightProduct = ProductPictures.allImages[rightProdIndex];
+    let rightProdIndex = Math.floor(Math.random() * ProductArray.allImages.length);
+    rightProduct = ProductArray.allImages[rightProdIndex];
   }
-
   productOrder.push(rightProduct);
 }
 
@@ -82,7 +99,7 @@ function displayVotes() {
   const h3Elem = document.createElement("h3");
   h3Elem.textContent = `Results:`;
   results.appendChild(h3Elem);
-  for (let prod of ProductPictures.allImages) {
+  for (let prod of ProductArray.allImages) {
     const liElem = document.createElement("li");
     liElem.textContent = `${prod.name}: chosen ${prod.clicks} times, shown ${prod.timesShown} times`;
     results.appendChild(liElem);
@@ -108,7 +125,7 @@ function handleClick(event) {
       leftProduct.timesShown++;
       midProduct.timesShown++;
       rightProduct.timesShown++;
-      randomProduct();
+
       renderProduct();
     }
   }
@@ -118,6 +135,9 @@ function handleClick(event) {
 
     // call chart function here
     renderChart();
+
+    // call function to store information in image array to local storage
+    storeItems();
   }
 }
 
@@ -131,13 +151,13 @@ function renderChart() {
 
   // collects all names of all the photos and stores in an array for chart to display on X axis
   let labelData = [];
-  for (let prod of ProductPictures.allImages) {
+  for (let prod of ProductArray.allImages) {
     labelData.push(prod.name);
   }
 
   // collects all values of votes and stores in an array for chart to display on Y axis
   let voteData = [];
-  for (let prod of ProductPictures.allImages) {
+  for (let prod of ProductArray.allImages) {
     voteData.push(prod.clicks);
   }
 
@@ -213,29 +233,30 @@ function renderChart() {
   chartDiv.setAttribute(`class`, `shown`)
 }
 
-new ProductPictures(`bag`, `./images/bag.jpg`);
-new ProductPictures(`banana`, `./images/banana.jpg`);
-new ProductPictures(`bathroom`, `./images/bathroom.jpg`);
-new ProductPictures(`boots`, `./images/boots.jpg`);
-new ProductPictures(`breakfast`, `./images/breakfast.jpg`);
-new ProductPictures(`bubblegum`, `./images/bubblegum.jpg`);
-new ProductPictures(`chair`, `./images/chair.jpg`);
-new ProductPictures(`cthulhu`, `./images/cthulhu.jpg`);
-new ProductPictures(`dog duck`, `./images/dog-duck.jpg`);
-new ProductPictures(`dragon`, `./images/dragon.jpg`);
-new ProductPictures(`pen`, `./images/pen.jpg`);
-new ProductPictures(`pet sweep`, `./images/pet-sweep.jpg`);
-new ProductPictures(`scissors`, `./images/scissors.jpg`);
-new ProductPictures(`shark`, `./images/shark.jpg`);
-new ProductPictures(`sweep`, `./images/sweep.png`);
-new ProductPictures(`tauntaun`, `./images/tauntaun.jpg`);
-new ProductPictures(`unicorn`, `./images/unicorn.jpg`);
-new ProductPictures(`usb`, `./images/usb.gif`);
-new ProductPictures(`water can`, `./images/water-can.jpg`);
-new ProductPictures(`wine glass`, `./images/wine-glass.jpg`);
+function createProducts() {
+  new ProductArray(`bag`, `./images/bag.jpg`);
+  new ProductArray(`banana`, `./images/banana.jpg`);
+  new ProductArray(`bathroom`, `./images/bathroom.jpg`);
+  new ProductArray(`boots`, `./images/boots.jpg`);
+  new ProductArray(`breakfast`, `./images/breakfast.jpg`);
+  new ProductArray(`bubblegum`, `./images/bubblegum.jpg`);
+  new ProductArray(`chair`, `./images/chair.jpg`);
+  new ProductArray(`cthulhu`, `./images/cthulhu.jpg`);
+  new ProductArray(`dog duck`, `./images/dog-duck.jpg`);
+  new ProductArray(`dragon`, `./images/dragon.jpg`);
+  new ProductArray(`pen`, `./images/pen.jpg`);
+  new ProductArray(`pet sweep`, `./images/pet-sweep.jpg`);
+  new ProductArray(`scissors`, `./images/scissors.jpg`);
+  new ProductArray(`shark`, `./images/shark.jpg`);
+  new ProductArray(`sweep`, `./images/sweep.png`);
+  new ProductArray(`tauntaun`, `./images/tauntaun.jpg`);
+  new ProductArray(`unicorn`, `./images/unicorn.jpg`);
+  new ProductArray(`usb`, `./images/usb.gif`);
+  new ProductArray(`water can`, `./images/water-can.jpg`);
+  new ProductArray(`wine glass`, `./images/wine-glass.jpg`);
+}
 
 // listener
 allImages.addEventListener('click', handleClick);
 
-randomProduct();
-renderProduct();
+searchStorage();

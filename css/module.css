@@ -18,14 +18,17 @@ main img {
 
 #firstSection {
   text-align: center;
+  width: fit-content;
 }
 
 #secondSection {
   text-align: center;
+  width: fit-content;
 }
 
 #thirdSection {
   text-align: center;
+  width: fit-content;
 }
 
 .hidden {
