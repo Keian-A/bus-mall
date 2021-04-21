@@ -16,8 +16,16 @@ main img {
   display: contents;
 }
 
-#allImages:nth-child(1) {
-  justify-content: center;
+#firstSection {
+  text-align: center;
+}
+
+#secondSection {
+  text-align: center;
+}
+
+#thirdSection {
+  text-align: center;
 }
 
 .hidden {

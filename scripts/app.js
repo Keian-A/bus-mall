@@ -221,18 +221,18 @@ new ProductPictures(`breakfast`, `./images/breakfast.jpg`);
 new ProductPictures(`bubblegum`, `./images/bubblegum.jpg`);
 new ProductPictures(`chair`, `./images/chair.jpg`);
 new ProductPictures(`cthulhu`, `./images/cthulhu.jpg`);
-new ProductPictures(`dog-duck`, `./images/dog-duck.jpg`);
+new ProductPictures(`dog duck`, `./images/dog-duck.jpg`);
 new ProductPictures(`dragon`, `./images/dragon.jpg`);
 new ProductPictures(`pen`, `./images/pen.jpg`);
-new ProductPictures(`pet-sweep`, `./images/pet-sweep.jpg`);
+new ProductPictures(`pet sweep`, `./images/pet-sweep.jpg`);
 new ProductPictures(`scissors`, `./images/scissors.jpg`);
 new ProductPictures(`shark`, `./images/shark.jpg`);
 new ProductPictures(`sweep`, `./images/sweep.png`);
 new ProductPictures(`tauntaun`, `./images/tauntaun.jpg`);
 new ProductPictures(`unicorn`, `./images/unicorn.jpg`);
 new ProductPictures(`usb`, `./images/usb.gif`);
-new ProductPictures(`water-can`, `./images/water-can.jpg`);
-new ProductPictures(`wine-glass`, `./images/wine-glass.jpg`);
+new ProductPictures(`water can`, `./images/water-can.jpg`);
+new ProductPictures(`wine glass`, `./images/wine-glass.jpg`);
 
 // listener
 allImages.addEventListener('click', handleClick);
