@@ -37,7 +37,7 @@ function searchStorage() {
   if (stringifiedVotes) {
     let votesParsed = JSON.parse(stringifiedVotes);
     ProductArray.allImages = votesParsed;
-    console.log(votesParsed);
+    // console.log(votesParsed);
     renderProduct();
   } else {
     createProducts();
